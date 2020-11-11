@@ -1,0 +1,29 @@
+<html>
+    <head>
+        {% if title %}
+            <title>
+                Gitau Harrison | {{ title }}
+            </title>
+        {% else %}
+            <title>
+                Welcome to My Personal Blog
+            </title>
+        {% endif %}
+    </head>
+    <body>
+        <div>
+            Gitau Harrison: <a href="/home">Home</a>
+        </div>
+        <div>
+            <ul>
+                <li><a href="/about-me">About Me</a></li>
+                <li><a href="/portfolio">Portfolio</a></li>
+                <li><a href="/hire-me">Hire Me</a></li>
+                <li><a href="/my-interests">My Interests</a></li>
+            </ul>
+        </div><hr>
+        {% block content %}
+
+        {% endblock %}        
+    </body>
+</html>
