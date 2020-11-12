@@ -1,0 +1,28 @@
+<h3>Comments</h3>
+<form action="" method="POST" novalidate>
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.username.label }}<br>
+        {{ form.username(size=32) }}<br>
+        {% for error in form.username.errors %}
+            <span style="color: orangered;"> {{ error }} </span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.email.label }}<br>
+        {{ form.email(size=32) }}<br>
+        {% for error in form.email.errors %}
+            <span style="color: orangered;"> {{ error }} </span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.comment.label }}<br>
+        {{ form.comment(size=64) }}<br>
+        {% for error in form.comment.errors %}
+            <span style="color: orangered;"> {{ error }} </span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.submit() }}
+    </p>
+</form>
