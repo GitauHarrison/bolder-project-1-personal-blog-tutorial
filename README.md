@@ -1,8 +1,6 @@
 # Personal Blog Tutorial
 
-This is a tutorial series based on Python and Flask. Here, I show how to start a Flask project until it is complete and hosted. Intentionally, I embark on showing how a building a personal blog can be a fun side project to learn Flask and web development in general. If you can build your own blog from scratch, why use a template?
-
-The complete tutorial is found on my [Personal Blog Series](https://gitauharrison-blog.herokuapp.com/personal-blog).
+This project is used in my [Make A Personal Blog](https://gitauharrison-blog.herokuapp.com/personal-blog) tutorial series. Intentionally, I embark on showing how building a personal blog can be a fun side project to learn Flask and web development in general. If you can build your own blog from scratch, why use a template?
 
 To run the application on your machine, clone this project:
 
