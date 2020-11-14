@@ -15,6 +15,14 @@
         Latin words, consectetur, from a Lorem Ipsum passage, and going through 
         the cites of the word in classical literature, discovered the undoubtable source.
     </p><hr>
-    {% include 'flashed_messages.html' %}
+    {% include '_flashed_messages.html' %}
+
+    <!-- User Comments Come Before the Form -->
+    {% for post in posts %}
+            {% include '_user_comments.html' %}
+        {% endfor %}
+        <!-- End of User Comments -->
+
     {% include 'comments.html' %}
+
 {% endblock %}

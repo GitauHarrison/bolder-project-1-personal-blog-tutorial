@@ -1,6 +1,7 @@
 from flask import render_template, flash, redirect, url_for
-from app import app
+from app import app, db
 from app.forms import CommentForm
+from app.models import User, Comment
 
 @app.route('/')
 @app.route('/home')
@@ -29,8 +30,14 @@ def my_interests():
 def flask_webforms():
     form = CommentForm()
     if form.validate_on_submit():
-        flash('{}\'s comment is now live!'.format(form.username.data))
+        user = User(username = form.username.data, email = form.email.data)
+        post = Comment(body = form.comment.data, author = user)
+        db.session.add(user)
+        db.session.add(post)
+        db.session.commit()
+        flash('Your comment is now live!')
         return redirect(url_for('flask_webforms'))
-    return render_template('flask_webforms.html', title = 'Flask Webforms', form = form)
+    posts = Comment.query.order_by(Comment.timestamp.desc())
+    return render_template('flask_webforms.html', title = 'Flask Webforms', form = form, posts = posts)
 
 # -------------------Articles End Here-----------------------
