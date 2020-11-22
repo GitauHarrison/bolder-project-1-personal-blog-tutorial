@@ -3,6 +3,14 @@
         <td width="70px">
             <img src="{{ post.author.avatar(36) }}">
         </td>
-        <td>{{ post.author.username }} says:<br>{{ post.body }}</td>
+        <td>
+            <span style="color: #482ff7">
+                {{ post.author.username }} 
+            </span>
+                said 
+                <span style=" font-size: 10px;">
+                    {{ moment(post.timestamp).fromNow() }}
+                </span>:<br>
+            {{ post.body }}</td>
     </tr>
 </table>
