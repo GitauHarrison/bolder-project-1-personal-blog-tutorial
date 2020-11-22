@@ -1,0 +1,44 @@
+/* ------------------------------------------------- */
+/* BASE STYLES */
+/* ------------------------------------------------- */
+html, body{
+    min-height: 100vh; /*Fills the viewport*/
+    width: 100%;
+    margin: 0px;
+    position: relative; /*You have to include this in order to position other child items*/
+    color: black;
+}
+body::after {
+    content: '';
+    display: block;
+}
+/* MEDIA QUIERIES */
+@media all and (max-width: 992px) {
+    body::after {
+        height: 150px; /* Set same as footer's height when not using media queries*/
+    }
+    .my-footer{
+        height: 50px;
+    }
+}
+@media all and (min-width: 992px) {
+    body::after {
+        height: 50px; /* Set same as footer's height when not using media queries*/
+    }
+    .my-footer{
+        height: 50px;
+    }
+}
+.row{
+    padding-bottom: 10px;
+}
+/* ------------------------------------------------- */
+/* FOOTER */
+/* ------------------------------------------------- */
+.my-footer{
+    margin-bottom: 0px;
+    position: absolute; /*With the parent's position relative, we can set our footer to absolute*/
+    bottom: 0; /*This takes it to the bottom*/
+    width: 100%;
+    /* height: 150px; */
+}
